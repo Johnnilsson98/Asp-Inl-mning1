@@ -9,7 +9,7 @@ namespace Inlämningsuppgift1_ASP.Models
     {
         public int EventId { get; set; }
         public string Title { get; set; }
-        public int OrganizerId { get; set; }
+        public string Organizer { get; set; }
         public string Description { get; set; }
         public string Place { get; set; }
         public string Address { get; set; }
