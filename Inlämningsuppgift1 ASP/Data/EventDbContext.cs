@@ -44,7 +44,10 @@ namespace Inlämningsuppgift1_ASP.Data
                 new Organizer(){Name = "Pajaserna", Email = "Fest4", PhoneNumber = "Halmstad4"}
             });
 
-
+            Attendee.AddRange(new List<Attendee>()
+            {
+                new Attendee(){Name = "John Nilsson", Email = "john.a.nilsson@hotmail.com", PhoneNumber = "0738318513"}
+            });
 
             this.SaveChanges();
         }
