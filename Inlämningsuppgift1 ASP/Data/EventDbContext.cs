@@ -49,6 +49,8 @@ namespace Inlämningsuppgift1_ASP.Data
                 new Attendee(){Name = "John Nilsson", Email = "john.a.nilsson@hotmail.com", PhoneNumber = "0738318513"}
             });
 
+            
+
             this.SaveChanges();
         }
     }

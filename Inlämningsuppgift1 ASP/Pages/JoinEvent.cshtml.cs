@@ -51,8 +51,22 @@ namespace Inlämningsuppgift1_ASP.Pages
                 return NotFound();
             }
 
+            var attendee = await _context.Attendee.Where
+                (a => a.AttendeeId == 1)
+                .Include(e => e.Event)
+                .FirstOrDefaultAsync();
 
-            return Page();
+            var join = await _context.Event.Where
+                (e => e.EventId == id)
+                .FirstOrDefaultAsync();
+
+            join.SpotsAvailable = join.SpotsAvailable - 1; // Får lägga till en koll på att man inte redan är med i eventet
+
+
+            attendee.Event.Add(join);
+            await _context.SaveChangesAsync();
+            return RedirectToPage("/MyEventPage");
+
         }
     }
 }
