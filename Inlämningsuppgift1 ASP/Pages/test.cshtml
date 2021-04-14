@@ -1,11 +1,11 @@
 ﻿@page
-@model Inlämningsuppgift1_ASP.Pages.JoinEventModel
+@model Inlämningsuppgift1_ASP.Pages.testModel
 
 @{
-    ViewData["Title"] = "JoinEvent";
+    ViewData["Title"] = "test";
 }
 
-<h1>JoinEvent</h1>
+<h1>test</h1>
 
 <div>
     <h4>Event</h4>
@@ -56,25 +56,6 @@
     </dl>
 </div>
 <div>
-    @if (Request.Method == "POST")
-    {
-        <div>
-            <h3>You have successfully joined this event, have fun!</h3>
-            <form>
-                <input asp-page="/Events" type="submit" value="See more events" />
-                <input asp-page="/MyEventPage" type="submit" value="See your events" />
-            </form>
-        </div>
-    }
-    else
-    {
-        <div>
-            <form method="post">
-                <input type="submit" name="test" value="Join this event!" />
-            </form>
-        </div>
-    }
-</div>
-<div>
-    <a asp-page="/Events">Back to events</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Event.EventId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
 </div>

@@ -65,7 +65,7 @@ namespace Inlämningsuppgift1_ASP.Pages
 
             attendee.Event.Add(join);
             await _context.SaveChangesAsync();
-            return RedirectToPage("/MyEventPage");
+            return Page();
 
         }
     }
